@@ -17,13 +17,13 @@ public class GreetingServiceTest {
 
   @Test(expected = UnsupportedOperationException.class)
   public void method1_triggersUnsupportedOperationAdvice() {
-    greetingService.method1();
+    greetingService.unsupportedMethod();
   }
 
   @Test
   public void method2_retrievesExpectedGreetingValue() {
-    Greeting greeting = greetingService.method2();
+    Greeting greeting = greetingService.methodUsingAutoValue();
 
-    then(greeting).isEqualTo(new Greeting("yo!"));
+    then(greeting).isEqualTo(Greeting.create("yo!"));
   }
 }

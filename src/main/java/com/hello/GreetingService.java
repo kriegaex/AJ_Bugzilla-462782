@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class GreetingService {
 
-  public void method1() {
+  public void unsupportedMethod() {
     // nothing to do
   }
 
-  public Greeting method2() {
-    return new Greeting("yo!");
+  public Greeting methodUsingAutoValue() {
+    return Greeting.create("yo!");
   }
 }

@@ -1,6 +1,5 @@
 package com.hello;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,8 +16,8 @@ public class AppConfig {
   @Component
   public static class UnsupportedOperationAspect {
 
-    @Before("execution(* com.hello.GreetingService.method1(..))")
-    public void doBefore(JoinPoint joinPoint) {
+    @Before("execution(* com.hello.GreetingService.unsupportedMethod(..))")
+    public void throwUnsupportedOperationOnGreetingServiceUnsupportedMethod() {
       throw new UnsupportedOperationException();
     }
   }

@@ -1,33 +1,13 @@
 package com.hello;
 
-import java.util.Objects;
+import com.google.auto.value.AutoValue;
 
-public class Greeting {
+@AutoValue
+public abstract class Greeting {
 
-  private final String message;
-
-  public Greeting(String message) {
-    this.message = message;
+  static Greeting create(String message) {
+    return new AutoValue_Greeting(message);
   }
 
-  public String getMessage() {
-    return message;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Greeting greeting = (Greeting) o;
-    return Objects.equals(message, greeting.message);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(message);
-  }
+  abstract String getMessage();
 }
