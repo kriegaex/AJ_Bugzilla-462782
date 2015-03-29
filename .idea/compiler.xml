@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AjcSettings">
-    <option name="ajcPath" value="C:\Users\dubose\.m2\repository\org\aspectj\aspectjtools\1.8.2\aspectjtools-1.8.2.jar" />
+    <option name="ajcPath" value="C:\Users\dubose\.m2\repository\org\aspectj\aspectjtools\1.8.5\aspectjtools-1.8.5.jar" />
     <option name="cmdLineParams" value="-Xlint:ignore -showWeaveInfo" />
     <option name="delegateToJavac" value="true" />
+    <option name="aptOptionsEnabled" value="true" />
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="ajc" />
@@ -32,7 +33,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="aspectj-autovalue" target="1.5" />
+      <module name="aspectj-autovalue" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

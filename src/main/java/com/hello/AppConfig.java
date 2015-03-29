@@ -15,11 +15,11 @@ public class AppConfig {
 
   @Aspect
   @Component
-  public static class DoBeforeAspect {
+  public static class UnsupportedOperationAspect {
 
-    @Before("execution(* com.hello.GreetingService.get(..))")
+    @Before("execution(* com.hello.GreetingService.method1(..))")
     public void doBefore(JoinPoint joinPoint) {
-      System.out.println("***AspectJ*** before " + joinPoint.getSignature());
+      throw new UnsupportedOperationException();
     }
   }
 }
