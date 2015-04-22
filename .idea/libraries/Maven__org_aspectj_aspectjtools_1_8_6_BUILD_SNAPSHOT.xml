@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.aspectj:aspectjtools:1.8.6.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjtools/1.8.6.BUILD-SNAPSHOT/aspectjtools-1.8.6.BUILD-20150420.170916-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjtools/1.8.6.BUILD-SNAPSHOT/aspectjtools-1.8.6.BUILD-20150420.170916-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjtools/1.8.6.BUILD-SNAPSHOT/aspectjtools-1.8.6.BUILD-20150420.170916-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

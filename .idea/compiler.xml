@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AjcSettings">
-    <option name="ajcPath" value="C:\Users\dubose\.m2\repository\org\aspectj\aspectjtools\1.8.5\aspectjtools-1.8.5.jar" />
+    <option name="ajcPath" value="C:\Users\dubose\.m2\repository\org\aspectj\aspectjtools\1.8.6.BUILD-SNAPSHOT\aspectjtools-1.8.6.BUILD-SNAPSHOT.jar" />
     <option name="cmdLineParams" value="-Xlint:ignore -showWeaveInfo" />
     <option name="delegateToJavac" value="true" />
     <option name="aptOptionsEnabled" value="true" />
