@@ -6,26 +6,28 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <javaVersion>1.8</javaVersion>
-    <springVersion>4.1.6.RELEASE</springVersion>
-    <aspectjVersion>1.8.6.BUILD-SNAPSHOT</aspectjVersion>
+    <springVersion>5.3.29</springVersion>
+    <aspectjVersion>1.9.21</aspectjVersion>
   </properties>
 
-  <repositories>
-    <repository>
-      <id>repo.spring.io</id>
-      <name>SpringSource snapshots</name>
-      <url>http://repo.spring.io/snapshot</url>
-    </repository>
-  </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>repo.spring.io</id>
-      <name>SpringSource snapshots</name>
-      <url>http://repo.spring.io/snapshot</url>
-    </pluginRepository>
-  </pluginRepositories>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>${aspectjVersion}</version>
+      </dependency>
+      <!-- Make sure, Spring uses the same version as we do -->
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectjVersion}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
@@ -48,22 +50,20 @@
     </dependency>
 
     <dependency>
-      <!-- required to provide the ajc compiler, reference this dependency in IntelliJ configuration -->
       <groupId>org.aspectj</groupId>
-      <artifactId>aspectjtools</artifactId>
-      <version>${aspectjVersion}</version>
+      <artifactId>aspectjrt</artifactId>
     </dependency>
 
     <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value</artifactId>
-      <version>1.0</version>
+      <version>1.5.4</version>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
 
@@ -85,15 +85,19 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>${javaVersion}</source>
+          <target>${javaVersion}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>dev.aspectj</groupId>
         <artifactId>aspectj-maven-plugin</artifactId>
-        <version>1.7</version>
+        <version>1.14</version>
         <dependencies>
-          <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>${aspectjVersion}</version>
-          </dependency>
           <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjtools</artifactId>
@@ -125,15 +129,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.3</version>
-        <configuration>
-          <source>${javaVersion}</source>
-          <target>${javaVersion}</target>
-        </configuration>
       </plugin>
     </plugins>
   </build>
